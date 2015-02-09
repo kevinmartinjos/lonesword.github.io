@@ -18,7 +18,7 @@ tags:
 - varnam
 - varnamproject
 ---
-{% youtube Nm8_uakH_XM 720 360 %}
+
 <br /><br />
 
 
