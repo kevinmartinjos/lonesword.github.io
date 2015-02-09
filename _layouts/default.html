@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/lonesword.css" >
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lobster&subset=all' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+	    <div class = 'container'>
+            <div id = 'banner' class = 'jumbotron'>
+                <h1 class = 'text-center'>Pieces Of Code</h1>
+                <h5 class = 'text-center'>Little pieces of code that make (my) life more meaningful</h5>
+            </div>
+            
+            {{content}}
+            
+        </div>
+        <div>
+            
+        </div>
+        <script type = 'text/javascript' src = '{{site.baseurl}}/js/jquery.js'></script>
+        <script type = 'text/javascript' src = '{{site.baseurl}}/js/controller.js'></script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+<div class="image-wrapper" style="float: {{include.align}}; width: {{include.width}}; height: {{include.height}};">
+
+    <img src="{{ site.baseurl }}{{ include.img }}" width = "{{include.width}}" height = "{{include.height"}} alt="{{ include.title }}"/>
+ 
+    {% if include.caption %}
+        <p class="image-caption">{{ include.caption }}</p>
+    {% endif %}
+</div>
