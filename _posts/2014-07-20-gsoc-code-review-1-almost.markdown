@@ -23,7 +23,7 @@ Stemming with IBus works, though with some bugs. Let us consider a case that wor
 The below video demonstrates varnam learning a word with Ibus as the input method. The next time the user starts to type the same word, you can see that its stemmed forms are available in the suggestions.
 
 <br/>
-{% youtube 8yS1dVu5q2k 720 360 %}
+
 <br/>
 Right now the only cause of concern with the suggestions is that incomplete words are suggested first, and the user has to go through the suggestions list to find the intended word. Also each time varnam learns a stemmed word, all its prefixes are learned as well. This will eventually lead to the incomplete prefixes coming up first on the suggestions list and the user will have to look through the list to find the word she is looking for.
 
