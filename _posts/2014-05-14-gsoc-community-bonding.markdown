@@ -19,6 +19,7 @@ tags:
 ---
 
 The community bonding period of this year's google summer of code is nearing an end. Its been a rather busy week, and I had to juggle time between exam preps and GsoC. I cannot say that I have made much progress. However, an IRC meeting with the mentor turned out to be very fruitful. It was about setting up the right development environment, and I did learn a lot!
+
 <br/><br/>
 **1. ctags/etags** : I was complaining how hard it is to find function definitions in the libvarnam codebase. There are a lot of header files. That's when I heard about ctags. I had to install the ctags package from the ubuntu repositories, and configure it to catalogue the libvarnam folder. Then I got myself the sublime text editor and installed the plugin for ctags. Now all I have to do is press ctrl+t+t when I encounter a function call and sublime will open the the definition of that function in a separate tab! Productivity multiplied – ten fold!
 

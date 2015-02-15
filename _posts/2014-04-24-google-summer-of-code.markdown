@@ -18,7 +18,7 @@ tags:
 - varnam
 ---
 
-{% include image.html img="/images/2014-04-24-google-summer-of-code/gsoc.png" width="400" height="550"%}
+{% include image.html img="/images/2014-04-24-google-summer-of-code/gsoc.png" width="278" height="250"%}
 
 I'm excited to announce that I've been selected to this year's google summer of code. My mentoring organization is SMC - Swathantra Malayalam Computing and I will be working on the varnam project.
 

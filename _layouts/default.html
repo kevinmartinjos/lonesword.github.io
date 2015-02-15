@@ -7,21 +7,23 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/lonesword.css" >
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lobster&subset=all' rel='stylesheet' type='text/css'>
+        <script type = 'text/javascript' src = '{{site.baseurl}}/js/jquery.js'></script>
     </head>
     <body>
 	    <div class = 'container'>
             <div id = 'banner' class = 'jumbotron'>
-                <h1 class = 'text-center'>Pieces Of Code</h1>
-                <h5 class = 'text-center'>Little pieces of code that make (my) life more meaningful</h5>
+            
+                <h1 class = 'text-left'>Pieces Of Code</h1>
+                <h5 class = 'text-left'>Little pieces of code that make (my) life more meaningful</h5>
+            
+            </div>
+        </div>
+        
+        <div class = 'container'>
+            <div class = 'col-md-6 no-padding'>
+                {{content}}
             </div>
             
-            {{content}}
-            
         </div>
-        <div>
-            
-        </div>
-        <script type = 'text/javascript' src = '{{site.baseurl}}/js/jquery.js'></script>
-        <script type = 'text/javascript' src = '{{site.baseurl}}/js/controller.js'></script>
     </body>
 </html>

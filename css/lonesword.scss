@@ -1,78 +1,196 @@
 ---
 ---
 
-$colorLightBlue: #CDE3F5;
+$colorLightBlue: #B0DFEE;
+$colorDarkBlue: #191F58;
+$colorGreen: #55AA55;
+$colorLightGreen: #81E88E;
+
+a{
+	color: #777;
+	text-decoration: none;
+}
 
 *{
 	font-family: 'Lato', sans-serif;
 }
 
-.post h3,h2{
-	font-family: 'Segoe UI', sans-serif;
+img{
+	border-radius: 10px;
 }
 
-#banner.jumbotron h1{
-	font-family: 'Lobster', cursive;
+.no-padding{
+	padding: 0px;
 }
 
+#banner.jumbotron{
+
+	padding-left: 20px;
+	transition-property: color, background-color;
+	transition-duration: 1s;
+
+	h1{
+		font-family: 'Lobster', cursive;
+		
+	}
+
+	h5{
+		color: #aaa;
+	}
+
+	background-color: white;
+
+	canvas{
+		width: 100%;
+		height: 100%;
+	}
+
+	@-webkit-keyframes cuberotate-horizontal{
+		from {top: 0px}
+		to {top: 100px}
+	}
+
+	@-webkit-keyframes cuberotate-vertical{
+
+		from {left: 0px}
+		to {left: 100px}
+	}
+}
+
+.sidebar{
+
+	width: 50%;
+	height: 100%;
+	float: right;
+	padding: 5px;
+	border-left: 1px solid #ccc;
+
+	h2,h3,h4 {
+		font-family: 'Segoe UI', sans-serif;
+	}
+}
+
+.sidebar .nav-list a{
+	color: #777;
+}
+
+.sidebar .nav-list a:hover{
+	color: white;
+	background-color: $colorLightGreen;
+
+}
+
+#feed{
+	font-size: 17px;
+	.post{
+		margin-bottom: 0px;
+		padding: 20px;
+		transition-property: background-color, color;
+		transition-duration: 0.5s;
+		
+
+		.title h4 a{
+			transition-property: color;
+			transition-duration: 1s;
+		}
+		
+	}
+
+	.post.image-only img{
+		width: 100%;
+		height: 100%;
+	}
+
+	.post:hover{
+		color: #444;
+		background-color: $colorLightBlue;
+		transition-duration: 0.5s;
+		border-radius: 5px;
+
+		.title h4 a{
+			transition-duration: 1s;
+			color: $colorDarkBlue;
+		}
+
+		.title small{
+			color: #777;
+		}
+
+	}
+}
 .post{
 
 	text-align: justify;
-	max-width: 60%;
-	margin-bottom: 40px;
-}
 
-.post .title h3,h2{
-	color: #337ab7;
-}
+	h3,h2{
+		font-family: 'Segoe UI', sans-serif;
+	}
+	.content{
+		font-size: 14px;
+	}
+	.title{
+		margin-bottom: 20px;
+		h3,h2{
+			color: $colorDarkBlue;
+		}
+		h3,h2 a{
+			text-decoration:none;
+			color: $colorDarkBlue;
+		}
+		small{
+			color: #999;
+		}
+	}
 
-.post .title h3,h2 a{
-	text-decoration:none;
-	color: #2D8633;
-}
+	.feed-actions-container{
+		display: flex;
+		text-decoration: none;
+		cursor: default;
+		align-items: center;
 
-.post .title{
-	margin-bottom: 20px;
-}
+		.read-more{
+			width: 25px;
+			height: 25px;
+			border-radius: 25px;
+			background-color: $colorLightGreen;
+			transition: all 0.15s ease-in-out;
+			margin-right: 10px;
+		}
 
-.post .title small{
-	color: #999;
-}
+		.read-more-text{
+			vertical-align: text-center;
+			color: $colorLightGreen;
+			display: none;
+			margin-right: 0px;
+		}
 
-.post .read-more-text{
-	vertical-align: text-center;
-	color: lightBlue;
-	display: none;
-	margin-left: 10px;
-}
+		.read-more:hover{
+			cursor: pointer;
+			width: 25px;
+			height: 25px;
+			border-radius: 2px;
+			background-color: $colorGreen;
+		}
+		
+		.read-more:hover ~ .share{
+			left: 20px;
+		}
 
-.post .read-more-container{
-	display: flex;
-	text-decoration: none;
-	cursor: default;
-	align-items: center;
-}
-
-.post .read-more{
-	width: 25px;
-	height: 25px;
-	border-radius: 25px;
-	background-color: lightBlue;
-	transition-property: background-color, border-radius;
-	transition-duration: 0.25s;
-	transition-timing-function: linear;
-}
-
-.post .read-more:hover{
-	cursor: pointer;
-	width: 25px;
-	height: 25px;
-	border-radius: 0px;
-	background-color: #457585;
-}
-
-.post .content{
-	font-size: 16px;
+		.share{
+			position: relative;
+			width: 25px;
+			height: 25px;
+			border-radius: 25px;
+			background-color: lightBlue;
+			transition: all 0.15s ease-in-out;
+		}
+		.share-text{
+			vertical-align: text-center;
+			color: lightBlue;
+			display: none;
+			
+		}
+	}
 }
 
 .image-wrapper {
@@ -83,7 +201,6 @@ $colorLightBlue: #CDE3F5;
 	padding-left: 10px;
 
     text-align: center;
-
     img{
     	width:100%;
     }
@@ -93,3 +210,8 @@ $colorLightBlue: #CDE3F5;
         margin-top: 20px;
     }
 }
+
+.image-wrapper:hover{
+	box-shadow: 1px 1px -2px 2px #aaa;
+}
+

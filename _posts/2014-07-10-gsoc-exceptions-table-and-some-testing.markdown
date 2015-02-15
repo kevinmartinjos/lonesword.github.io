@@ -20,7 +20,8 @@ tags:
 ---
 
 Progress has been slow the past week, thanks to some non-academic preoccupations and a trip home. However, had I been a bit more organized, I would have been more successful at the rather mundane task of testing out the stemming accuracy.
-<br/><br/>
+
+<br/>
 There are some design changes. Some stem rules did not gave the desired results in all cases. That is,there were exceptions. One particular stem rule that was giving me considerable headache was "ന്" => "ൻ". For example, ആദിത്യന് should stem to ആദിത്യൻ. But while this worked wonderfully, പിറ്റേന്ന് would be incorrectly stemmed to പിറ്റേന്ൻ. This is because ന്ന is actually a combination of ന് and ന. So ന്ന് is actually ന്+ന് and my algorithm stems the first ന് to ൻ (see previous post).
 <br/><br/>
 This problem can be solved by using a look ahead. A look ahead in its proper and fully scalable (that is, an algorithm that can look ahead any number of characters) can turn out to be too much so I decided to test the idea with a single look ahead. Along with stem rules, I added another table to the database "stem\_exceptions" that contain exceptions for each stem rule. For example, the exception rule for ന് is "ന്" => "ന്". This tells varnam to NOT stem ന് to ൻ if the syllable preceding ന് is another ന്. This will ensure that varnam will ന് to ൻ in all cases except when it occurs as a part of ന്ന്. 

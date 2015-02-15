@@ -6,8 +6,7 @@ layout: post
 slug: web-design-for-programmers-a-10-minutes-crash-course
 title: 'Web design for programmers : A 10 minutes crash course'
 wordpress_id: 187
-categories:
-- web
+categories: web
 tags:
 - css
 - html

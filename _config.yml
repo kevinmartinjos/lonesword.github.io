@@ -1,4 +1,6 @@
 name: lonesword.io
 markdown: redcarpet
 pygments: true
-baseurl: 
+baseurl:
+paginate: 15
+paginate_path: "/page:num" 

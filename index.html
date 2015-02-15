@@ -3,37 +3,74 @@ layout: default
 title: Home
 ---
 
-<section id = 'feed'>
-
+<div id = 'feed'>
 {% for post in site.posts %}
-	<div class = 'post'>
-		<div class = 'title'>
-			<h3><a href = {{post.url}}>{{post.title}}</a></h3>
-			<small>{{post.date | date_to_long_string}}</small>
+	{%if post.image %}
+		<div class = 'post image-only'>
+			<div class = 'title'>
+				<h4><a href = {{post.url}}>{{post.title}}</a></h4>
+				<small>{{post.date | date_to_long_string}}</small>
+			</div>
+			<img src = "{{post.image_path}}">
 		</div>
-		<div class = 'excerpt'>
-			{{post.excerpt}}
-			<a href = {{post.url}} class = 'read-more-container'>
-				<div class = 'read-more'>
-				</div>
-				<span class = 'read-more-text'>More</span>	
-			</a>
+	{% else %}
+		<div class = 'post'>
+			<div class = 'title'>
+				<h4><a href = {{post.url}}>{{post.title}}</a></h4>
+				<small>{{post.date | date_to_long_string}}</small>
+			</div>
+			<div class = 'excerpt'>
+				{{post.excerpt}}
+			</div>
 		</div>
-	</div>
+	{% endif %}
 {% endfor %}
 
-<!--
-{% for post in site.posts %}
-	<div class = 'post panel panel-default'>
-		<div class = 'title'>
-			<h3>{{post.title}}</h3>
-			<small>{{post.date | date_to_long_string}}</small>
-		</div>
-		<div class = 'excerpt'>
-			{{post.excerpt}}
-			<span class = 'text-right'><a href = {{post.url}}>Read</a></span>
-		</div>
-	</div>
-{% endfor %}
--->
-</section>
+</div>
+
+<script type = 'text/javascript'>
+	(function(f){
+            f();
+        })(function(){
+            var windowWidth = window.innerWidth;
+            var tileWidth = 400;
+            var posts = $('#feed').children();
+            var childNodes = $('#feed').children('.post');
+            var leftX, leftY, rightX, rightY;
+            var leftHeight=0, rightHeight = 0, maxHeight=1;
+
+            $('.post').each(function(){
+            	
+            	$(this).css('position', 'absolute');
+
+            	if(leftHeight < maxHeight){
+            		leftX = $(this).position().left;
+            		leftY = leftHeight;
+            		
+            		$(this).css('left', leftX+'px');
+            		$(this).css('top', leftY+'px');
+            		$(this).css('width', 400+'px');
+
+            		leftHeight += $(this).outerHeight() + 20;
+
+            		if(leftHeight > maxHeight)
+            			maxHeight = leftHeight;
+            	}
+            	else{
+            		rightX = $(this).position().left + 450;
+            		rightY = rightHeight;
+
+            		$(this).css('left', rightX+'px');
+            		$(this).css('top', rightY+'px');
+            		$(this).css('width', 400+'px');
+
+            		rightHeight += $(this).outerHeight() + 20;
+
+            		if(rightHeight > maxHeight)
+            			maxHeight = rightHeight;
+            	}
+            });
+        });
+</script>
+
+

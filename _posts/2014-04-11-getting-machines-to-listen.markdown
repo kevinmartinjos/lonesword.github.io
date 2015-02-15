@@ -20,6 +20,7 @@ tags:
 ---
 
 I've been wanting to do this sound localization project for almost an year now. Its simple - have a few microphones ready, yell at it, and display the direction of sound on a screen. And being the electronics newbie I am, I had spent a considerable amount of time wondering how to connect an electret mic to my board/computer.
+
 <br/>
 However, the last few days have been extremely productive and now I understand what exactly goes on when you yell at your laptop mic.
 <br/><br/>
