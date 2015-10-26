@@ -1,0 +1,112 @@
+---
+author: lonesword
+comments: true
+image: true
+image_path: /images/2013-01-14-game-of-life-101/life.png
+date: 2013-01-14 18:24:01+00:00
+layout: post
+slug: game-of-life-101
+title: Game of life 101
+wordpress_id: 16
+categories:
+- game of life
+- programming
+- python
+tags:
+- game
+- game of life
+- programming
+- pygame
+- python
+---
+
+{% include image.html img="/images/2013-01-14-game-of-life-101/life.png" caption = "Command line life" %}
+
+I know I said this would be a program that's graphical. But I certainly think it would be a rather good idea to get GOL (Game of Life) up and running in text only mode first before jumping into mouse clicks and green cells. Modus operandi? Simple. Make a list of what should be implemented, and  how it is intended to be implemented.
+<br/><br/>
+"You got to be kidding me! Make a list of what to implement and all that crap? Don't we all write code on the go? " - typical reaction when the teacher says "Write an algorithm to print the sum of 2 numbers". Let me make a few things clear first :
+<br/><br/>
+1. This program is  more complicated than say, bubble sort, and definitely many times complicated than finding the sum of two numbers. if you are unfamiliar with classes and constructors in object oriented programming, I suggest you to go through any one introduction to python books.
+<br/><br/>
+2. I was one of those wanna be coders who thought algorithms and top-down design approach was completely unnecessary as long as you have the *idea*. That works fine for bubble sort, but when we are writing a program that involves a lot of classes and a few pages of code, its very difficult to keep track of things. More so when we write programs that span multiple files. So write down at least vaguely what and how we are going to get things done.
+<br/><br/>
+3. Yes. This program is going to span multiple files. Doing so not only gives me a sense of achievement (How many one file software have you encountered? Hint : None) but adds to the total readability of the project.
+<br/><br/>
+4. Programming in python makes life a lot more simple. And I'm still more or less a wannabe coder ;)
+<br/><br/>
+Let me begin by describing the Game board. When I talked about grids and cells in my last post, there came to my mind only one obvious method to do it : Matrices. The Game board or the "playing area" will necessarily be a matrix with a number of rows and columns. Each 'element' or 'position' in that matrix can be either dead or alive. The user will provide an initial configuration by marking alive cells with a value of 1 and dead cells with a value of 0. Then, when the user press a particular key, a compute() function will compute the number of alive neighbours for each cell, and then update each cell based on the number of its live neighbours.
+<br/><br/>
+My particular version of text only, dumbed down GOL was done using 3 files :
+<br/><br/>
+1.game.py : The core file. Contains a Game class whose primary job is just to sit there and call other classes and functions.
+<br/><br/>
+2.init.py : Creates an empty matrix and contains functions to let the user input an initial configuration.
+<br/><br/>
+3.compute.py : As you might have already guessed, this file contains a ComputeNeighbours class which computes the no of live neighbours of a cell, and a Generate class which updates the cell based on its number of live neighbours
+<br/><br/>
+A word on the matrix I used though : I found it a bit hard to swallow but there really are no 'arrays' in python. Instead, they have this wonderful stuff called lists which is pretty much a dumbed-down uncomplicated version of arrays. I come from a c background and I spent a considerable amount of time gaping at the screen because I could not for the life of me figure out how to implement two dimensional arrays (our matrix) in python. A friend came to the rescue and this is how i did it :
+<br/><br/>
+`matrix=[[[0,0]]*no_of_cols for x in range(no_of_rows)]`
+<br/><br/>
+Looks scary.
+<br/><br/>
+a list is represented as [] in python. So [0,0] is a list and its first element is 0 and the second element is 0 as well. let the no_of_cols be 3. so `[0,0]*3` will give you
+<br/><br/>
+`[0,0,0,0,0,0]`
+<br/><br/>
+But here, we have written `[[0,0]]*no_of_cols`. And THAT gives us `[[0,0],[0,0],[0,0]]`. Tadaaaaaa - A list of lists!!
+<br/><br/>
+let no_of_rows be 3 as well
+<br/><br/>
+so `[[[0,0]]*no_of_cols for x in range(no_of_rows)]`     will give us :
+<br/><br/>
+
+```
+[[[0, 0], [0, 0], [0, 0]], [[0, 0], [0, 0], [0, 0]], [[0, 0], [0, 0], [0, 0]]]
+```
+
+<br/><br/>
+which really is :
+<br/><br/>
+
+```
+[[0,0] ,[0,0], [0,0]]
+
+[[0,0], [0,0], [0,0]]
+
+[[0,0], [0,0], [0,0]]
+```
+
+<br/><br/>
+And that's our 3x3 two dimensional matrix! But hey, why is each element in the matrix a list as well? Because, I'll be using a list to represent each cell. The first value in the list says whether the cell is live (1) or dead (0). The next value tells us the number of live neighbours for a particular cell. For eg, if the user inputs an initial configuration such that all the cells are alive, then the value of the first element in the list representing each cell will be 1. Moreover, all the corner cells will have 3 live neighbours, the cells on boundary will have 5 live neighbours and cells NOT on the boundary will have 8 live neighbours. The matrix is passed on to the ComputeNeighbour class. This is how the no of live neighbours are calculated:
+<br/><br/>
+1.First, the location of the cell is determined. A cell can either be on a corner, a row boundary (as in a[i][0]), 'a' is the matrix), a column boundary (a[0][i]) or not on the edge at all
+<br/><br/>
+2. Depending upon the location of the cell, the number of neighbour cells it has also varies. So a different function is called to compute the number of neighbours for each type of cell (that is, whether the cell is on a corner or row_boundary)
+<br/><br/>
+3. The number of live neighbours of each cell is written into the second position of the list representing that cell. If the top-left corner  cell is alive and it has 2 live neighbours, then the matrix would be :
+<br/><br/>
+
+```
+[[1,2],[x,y],[x,y]]
+
+[[x,y],[x,y],[x,y]]
+
+[[x,y],[x,y],[x,y]]
+```
+
+and so on.
+<br/><br/>
+
+After we compute the number of live neighbours of each cell and feed this data into the matrix, finding the next state of the matrix is easy. Just apply the [rules](http://kevincoder.wordpress.com/2013/01/13/up-for-a-game-of-life-anyone/) to make each cell dead(0) or alive(1). As far as my program goes, after the user enters the initial configuration, pressing 1 on the keyboard prints out the next state of the matrix. The user inputs 0 to exit the program.
+<br/><br/>
+Although I'll have to make some serious changes in this program when adding the graphical stuff, doing the text only GOL was necessary since in the graphical version, I'd simply be displaying information present in the matrix on to the screen.
+<br/><br/>
+I've uploaded my version of text only GOL in a zip file :
+
+[https://docs.google.com/file/d/0B6gQ1pCnWlqbaWd3dWtvZ2Joblk/edit](https://docs.google.com/file/d/0B6gQ1pCnWlqbaWd3dWtvZ2Joblk/edit)
+<br/><br/>
+Don't go downloading individual files. Press ctrl+s to download the zip file or go to file->download. Ignore the .pyc files. They are automatically generated when you run the .py files for the first time
+<br/><br/>
+Even though everything *seemed* very straightforward, I ran into random errors and my code is more or less a mess - even though readable enough. Execute game.py to run the program.
+<br/><br/>

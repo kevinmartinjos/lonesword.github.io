@@ -1,0 +1,27 @@
+---
+author: lonesword
+comments: true
+date: 2013-04-18 09:27:53+00:00
+layout: post
+slug: '58'
+title: Tokelau Beckons
+wordpress_id: 58
+categories:
+- General
+---
+
+EDIT: The domain I registered was taken away. I do not know what happened. Probably because it was free and they figured out I'm never going to upgrade. kevinkoder.tk is officially down. [kevinkoder.hostei.com](http://kevinkoder.hostei.com/) still works, though
+
+Its been quite a while since my last post. But I've been busy : Skyrim, total war, FIFA, swimming lessons.....whew! And even though i DID do some coding all this while, I believe its too premature to share. And what now? There's some news - Tokelau! Apparently, Tokelau is a territory of New Zealand in the south pacific. They've got coral reefs, great beaches, and everything else that fits the description of a 'tropical paradise'.
+
+And what Tokelau has got to do with computers and coding might be of interest to many a soul - they give away free top level domain names. Top Level Domains (TLDs) are what you call domains like .com and .net. That is, the URL looks nice. If you've ever signed up for a free web hosting service before you'd know that your site gets a pretty weird name like yoursitename.freewebhosting.com . It certainly doesn't look nice and it certainly isn't a TLD. If you want to have something like www.mysite.com, you'll have to register (ie pay) a domain.? Well, .tk is a TLD and you can register there for free. And one interesting news - Tokelau was able to achieve a 10%  increase in its GDP through domain sales alone! So how do you get a www.mysite.tk site? Its pretty simple really.
+
+First you'd need a host. A host is some server where you can place all your files (contents of your site) and programs. I recommend 000webhost. Setting up a site at 000webhost will give you a site with the URL www.kevinkoder.hostei.com or something similar. Set up a site with any name and upload the your .htm file at the public_html folder. If the previous sentence sounds very very alien to you, I strongly recommend that you learn some html from w3schools.com (its easy as saying 1,2,3,4... out aloud) and do some primary research on creating and uploading webpages. Your site at 000webhost is not going to have a nice URL, for now.
+
+Second, you need to register a domain at dot tk. Goto www.dot.tk and register a domain. Registering a domain simply involves creating an account at dot.tk and giving your required URL. (eg : www.kevinkoder.tk). They will check if the domain name is already taken and will register it for you if it is not already registered by some one else.
+
+Now, you have a site up and running at 000webhost (or some other web host) with a weird URL like kevinkoder.hostei.com and you have registered for a domain www.kevinkoder.tk. Now what you need to do is 'point' www.kevinkoder.tk to kevinkoder.hostei.com. That is when some one types in www.kevinkoder.tk into their browser, the browser should load the contents situated at www.kevinkoder.hostei.com (hosted at 000webhost or any other webhost).
+
+To do this, you need to know the nameservers of your host. For 000webhost, this information is available at the 'account details' section inside the cpanel. Copy the adress of the nameservers and their ip adresses as well. Now log in to www.dot.tk and go to the domain panel. Click the modify button corresponding to your domain name. Now under the DNS settings, you will be prompted to use either their DNS, or just do domain forwarding, or use custom DNS. DNS stands for domain name system. Every site on the internet is actually represented by a string of numbers known as the ip adress. For example, facebook.com might actually be 192.168.16.1 or some other weird number. Everytime you access a site, you are actually connecting to the computer with the corresponding ip adress. But remembering all those numbers is a pain in the ass. That is why we map names to these numbers. DNS is a system which determine which names go to which numbers. To make www.kevinkoder.tk to point to the number represented by www.kevinkoder.hostei.com, we need to supply the 'numbers' at www.dot.tk. Select custom DNS. Now you'll see two boxes with the titles 'nameserver' and 'ip adress'. Paste the information you copied from account details at 000webhost into these 2 boxes. That's it. You've done it.
+
+But www.kevinkoder.tk won't point to the contents of www.kevinkoder.hostei.com (or wherever you have hosted your site) until a few hours later. The thing is, it requires around 48 hours for the domain name to 'propagate' through the web. So give Tokelau some time and check back later. Mean while, as the deputy ambassador of Tokelau (check the ambassodors programme), you might want to consider persuading a few more people to join ;)
