@@ -38,4 +38,4 @@ According to lifehacker, [the pomodoro technique](http://lifehacker.com/5890829/
 
   My two cents.
 
-  {% include image.html img="images/2015-11-10-pomodoros-for-programming/board.jpg" caption="Estimated 4 pomodoros and did it in 2. What a wonderful day!" %}
+{% include image.html img="images/2015-11-10-pomodoros-for-programming/board.jpg" caption="Estimated 4 pomodoros and did it in 2. What a wonderful day!" %}
