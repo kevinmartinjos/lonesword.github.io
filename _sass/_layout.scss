@@ -9,10 +9,24 @@ html,body {
  .title{
 	 color: white;
  }
- 
+
+// .header:hover{
+// 	background-color: rgba(17, 17, 17, 0);
+// 	transition: background-color 0.5s, color 1s;
+//
+// 	.title h2{
+// 		color: #222;
+// 	}
+//
+// 	.nav li a, .description{
+// 		color: #666;
+// 	}
+// }
+
 .header {
     padding: 50px 20px 40px;
-    background-color: #515865;
+		transition: background-color 0.5s, color 1s;
+    background-color: #030B30;
 }
 
 .header-container {
@@ -90,7 +104,7 @@ li {
 
 .social-links {
     padding-top: 10px;
-	margin-left: 0px;
+		margin-left: 0px;
 }
 
 .social-links li {
@@ -99,6 +113,9 @@ li {
     line-height: 0;
 }
 
+.social-links a:hover{
+	color: #117BE3;
+}
 .social-links a {
     color: #959BA6;
 }
@@ -198,7 +215,7 @@ li {
     bottom: 20px;
     padding: 10px 15px;
     font-size: 20px;
-    background: #515865;
+    background: #030B30;
     color: white;
     cursor: pointer;
 }
