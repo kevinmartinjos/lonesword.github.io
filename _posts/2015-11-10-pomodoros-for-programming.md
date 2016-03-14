@@ -14,7 +14,7 @@ tags:
 - productivity
 ---
 
-According to lifehacker, [the pomodoro technique](http://lifehacker.com/5890829/most-popular-productivity-method-the-pomodoro-technique?trending_test_d&utm_expid=66866090-62.H_y_0o51QhmMY_tue7bevQ.4&utm_referrer=https%3A%2F%2Fwww.google.co.in%2F) came out as the most popular productivity method. I've been using this neat little technique since college. And now work. Pomodoros for exam prep was easy - you sit in front of the book while the clock is ticking and you go for a walk when it isn't. But using pomodoros for programming turned out to be slightly more complicated that. Here's what I found:
+According to lifehacker, [the pomodoro technique](http://lifehacker.com/5890829/most-popular-productivity-method-the-pomodoro-technique?trending_test_d&utm_expid=66866090-62.H_y_0o51QhmMY_tue7bevQ.4&utm_referrer=https%3A%2F%2Fwww.google.co.in%2F) came out as the most popular productivity method. I've been using this neat little technique since college. And now work. Pomodoros for exam prep was easy - you sit in front of the book while the clock is ticking and you go for a walk when it isn't. But using pomodoros for programming turned out to be slightly more complicated than that. Here's what I found:
 
   1. Do NOT use pomodoros for debugging. You cannot estimate when you will figure out what is causing that bug. It can take anything between 2 hours to 2 days.
 
