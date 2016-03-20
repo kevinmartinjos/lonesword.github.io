@@ -5,7 +5,7 @@ date: 2016-03-20 12:17:21+05:30
 layout: post
 image: true
 slug: Foray into design
-title: Foray into design
+title: Starting up on a saturday 'noon.
 categories:
 - design
 - art
