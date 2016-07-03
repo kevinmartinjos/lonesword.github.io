@@ -1,7 +1,7 @@
 var canvas;
 var context;
 var angleDeviation = Math.PI/4;
-var maxLevel = 12;
+var maxLevel = 11;
 var treeList = [];
 var calculateGlobals = function(){
   canvas = document.getElementById("homeCanvas");
@@ -37,8 +37,6 @@ Tree.prototype.run = function(){
     setTimeout(function(){
       this.leftChild = new Tree(self.length/1.7, self.endX, self.endY, self.theta + angleDeviation, self.level + 1).run();
       this.rightChild = new Tree(self.length/1.7, self.endX, self.endY, self.theta - angleDeviation, self.level + 1).run();
-      treeList.push(leftChild);
-      treeList.push(rightChild);
     }, 1000);
   }
 };
