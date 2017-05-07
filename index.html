@@ -1,24 +1,23 @@
 <!DOCTYPE HTML>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
 	<head>
 		<title>lonesword.in</title>
-		<script src="scripts/victor.min.js"></script>
-		<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/home.css">
+		<link rel="stylesheet" href="css/main.css">
 
 	</head>
 	<body>
-		<canvas id="homeCanvas"></canvas>
-		<div id = "mainContainer" class='container'>
-			<div class='jumbotron'>
-				<h3>Kevin Martin Jose</h3>
-				<small>
-					Developer.
-				</small>
-				<br><a href = 'http://lonesword.in/blog'>Visit my blog</a>
+		<div id="mainContainer" class="container">
+			<div class="row">
+				<div id="terminal" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<span class='prompt'>user@lonesword.in</span>
+					<span class = 'promptEnd'> ~ $ </span>
+					<span id='command' class='command'></span>
+					<span id="cursor">|</span>
+				</div>
 			</div>
 		</div>
-		<script src="scripts/backgroundCanvas.js"></script>
+		<script src="scripts/terminal.js"></script>
 	</body>
 </html>

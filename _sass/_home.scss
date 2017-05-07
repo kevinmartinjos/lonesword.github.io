@@ -1,0 +1,59 @@
+#mainContainer{
+	margin: 0px;
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+}
+
+#terminal{
+	background-color: black;
+	height: auto;
+	#command, .command {
+		color: white;
+	}
+
+	.prompt {
+		color: lightGreen;
+	}
+
+	.promptEnd {
+		color: lightBlue;
+	}
+
+	.result {
+		color: white;
+
+		.ls {
+			margin-right: 1em;
+		}
+
+		.lsLink{
+			margin-right: 1em;
+			&:hover{
+				color: lightBlue;
+			}
+		}
+	}
+
+	#cursor{
+		font-weight: 100;
+		font-size: 20px;
+		color: white;
+		-webkit-animation: 1s blink step-end infinite;
+	}
+
+	.ps {
+		text-align: left;
+		margin-right: 1em;
+		color: white;
+	}
+}
+
+@-webkit-keyframes "blink" {
+	0% {
+		color: transparent;
+	}
+	50% {
+		color: white;
+	}
+}
