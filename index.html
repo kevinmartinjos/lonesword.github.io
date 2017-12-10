@@ -1,23 +1,23 @@
-<!DOCTYPE HTML>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<html>
-	<head>
-		<title>lonesword.in</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/main.css">
+---
+layout: default
+---
 
-	</head>
-	<body>
-		<div id="mainContainer" class="container">
-			<div class="row">
-				<div id="terminal" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<span class='prompt'>user@lonesword.in</span>
-					<span class = 'promptEnd'> ~ $ </span>
-					<span id='command' class='command'></span>
-					<span id="cursor">|</span>
-				</div>
-			</div>
-		</div>
-		<script src="scripts/terminal.js"></script>
-	</body>
-</html>
+<div class="home">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <div>
+        <br>
+        <h3>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h3>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y %H:%m" }}</span>
+        <hr id="line">
+		    <div class="content">
+      		{{ post.excerpt }}
+        </div>
+		    <br>
+      </div>
+    {% endfor %}
+  </ul>
+</div>
+

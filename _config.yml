@@ -1,13 +1,6 @@
-# Site settings
-title: Pieces Of Code
-motto: Little pieces of code that make my life beautiful
-email: youcancallmekevinl@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-    Kevin Martin's personal blog.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://lonesword.in" # the base hostname & protocol for your site
-twitter_username: lonesword_
-github_username:  lonesword
-
-# Build settings
-markdown: kramdown
+title: Pieces of code
+description: Kevin blogs here.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-minimal
+github.url: github.com/lonesword

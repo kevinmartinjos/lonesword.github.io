@@ -31,7 +31,7 @@ Your glorious new app requires the user to log in before they are allowed do cer
 
 The solution is simple enough. Just like Scott explained in the [original article](https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1), we create a React component that contains the login logic. This component wraps all of the routes that require authenticated users. Our entry point to the app would look something like this:
 
-```
+```js
 ReactDOM.render(
   <Router>
 	<App />
@@ -42,7 +42,7 @@ ReactDOM.render(
 
 But where did all the routes go? From react-router 4.x, you don't get to define all your routes in one place. Yep, you read that right. So our `App` component will be doing its part in routing:
 
-```
+```js
 class App extends Component {
 	constructor(props){
 		super(props);
@@ -67,7 +67,7 @@ So what are we doing here? If the url exactly matches `/`, we render a `Home` co
 
 OK. So now we can show a home page. What does the `RootRouteWrapper` component do again?
 
-```
+```js
 class RootRouteWrapper extends Component {
 	render() {
 		return (
@@ -85,7 +85,7 @@ class RootRouteWrapper extends Component {
 
 We define 2 routes here - `/login` to show the user a login prompt and `/tweet` to let the user post a tweet. Now `/tweet` should be accessible only if the user is logged in. `EnsureLoggedInContainer` is the magic component that will handle the login logic for us. The idea is to configure all routes that needs authentication to render the `EnsureLoggedInContainer`. You can also see that we have defined a route that will render the `PageNotFound` component if the url does not match any configured routes. On to our login logic:
 
-```
+```js
 import {Route, Switch, withRouter} from 'react-router-dom';
 
 class EnsureLoggedInContainer extends Component {
