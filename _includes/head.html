@@ -1,4 +1,13 @@
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113887871-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113887871-1');
+  </script>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width initial-scale=1">
@@ -11,8 +20,4 @@
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <script src="/scripts/jquery-1.11.2.min.js"></script>
   <script src="/scripts/pithy.js"></script>
-
-  {% if site.google_analytics%}
-  {% include analytics.html %}
-  {% endif %}
 </head>
