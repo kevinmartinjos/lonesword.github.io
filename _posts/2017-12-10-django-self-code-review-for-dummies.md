@@ -64,7 +64,7 @@ Read through the code you wrote, and stop and ponder at each line.
 
 5. Speaking of unit tests, how do you decide when to write unit tests and when not to? If it's business logic, it need unit tests. No buts, no maybes, just write the damn tests. If it is say, something in your `ModelAdmin`, then you can afford not to write unit tests for that as long as you don't do any fancy `if..else`s there. Test your business logic, not your boilerplate
 
-6. Check if your changes require data migration. I made the rookie mistake of happily coding away on my feature without nary a thought about the existing data in the database, and regretted it afterwards. See [here](https://realpython.com/blog/python/django-migrations-a-primer/) for a primer on django migrations
+6. Check if your changes require data migration. I made the rookie mistake of happily coding away on my feature with nary a thought about the existing data in the database, and regretted it afterwards. See [here](https://realpython.com/blog/python/django-migrations-a-primer/) for a primer on django migrations
 
 7. While doing self code review, keep an eye out for things that can be cached. Find yourselves fetching 'top 10 scorers of all time' from the db everytime the page loads? Cache it! Though this should be fairly obvious, it's easy to forget about the cache when you are busy writing your feature. 
 
@@ -74,7 +74,7 @@ Read through the code you wrote, and stop and ponder at each line.
 	- Once you fire the async task, immediately respond to the http request with the message "Looking for grumpy cats in the system, we will let you know when we are done". Now your user can use his/her time for something more productive
 	- Message the user in slack/send an email/display a button on the page when your async task is done.
 
-	This will let us offload heavier tasks to spare S3 instances so that more critical requests/queries do not get slower because of grumpy cats
+	This will let us offload heavier tasks to spare EC2 instances so that more critical requests/queries do not get slower because of grumpy cats
 
 	<blockquote class="imgur-embed-pub" lang="en" data-id="YOmDuDV"><a href="//imgur.com/YOmDuDV">Grumpy Cat Programmer</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
@@ -127,7 +127,7 @@ Read through the code you wrote, and stop and ponder at each line.
 	need_refuel = fuel_level < 0.2 or False
 	```
 
-11. Get only the attributes your need. If you had a model like this:
+11. Get only the attributes you need. If you had a model like this:
 	```py
 	class Banana(models.Model):
 		gorilla = models.CharField()
@@ -141,7 +141,7 @@ Read through the code you wrote, and stop and ponder at each line.
 	banana = Banana.objects.get(id=3)
 	```
 
-	What you wanted was a banana, but what you got was a gorilla holding the banana with the tree it was sitting on along with the entire fricking jungle. Not cool. 
+	What you wanted was a banana, but what you got was a gorilla holding the banana with the tree it was sitting on along with the entire fricking jungle (thanks, Joe Armstrong for the quote). Not cool. 
 
 	What you *can* do instead is:
 	```py
